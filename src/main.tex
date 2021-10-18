@@ -1,0 +1,92 @@
+%! Author = Frederik Bußmann
+%! Date = 21.10.2021
+
+% Preamble
+\documentclass[11pt]{article}
+
+% Packages
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+\usepackage{csquotes}
+\usepackage[nottoc]{tocbibind}
+
+\usepackage[colorlinks,
+    urlcolor = blue,
+    linkcolor = black,
+    citecolor = black,
+    pdfpagelabels,
+    pdfstartview = FitH,
+    bookmarksopen = true,
+    bookmarksnumbered = true,
+    plainpages = false,
+    hypertexnames = false] {hyperref}
+
+\usepackage{listings}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{afterpage}
+\usepackage{biblatex}
+
+% PDF Info
+\hypersetup{
+    pdfinfo={
+        Author={Frederik Bussmann},
+        Title={PDF Metadata Title},
+        Subject={PDF Metadata Subject},
+        Keywords={PDF Metadata Keywords},
+    }
+}
+
+\title{PDF Title}
+\author{Frederik Bußmann}
+\date{October 2021}
+
+% Commands
+\newcommand\blankpage{
+    \null
+    \thispagestyle{empty}
+    \newpage}
+
+% Settings
+\setstretch{1.25}
+\addbibresource{references.bib}
+
+% Document
+\begin{document}
+    \graphicspath{{/data}}
+
+    % Title page
+    \begin{titlepage}
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/latex}\par\vspace{1cm}
+        {\scshape\Large Latex is awesome!\par}
+        \vspace{1cm}
+        {\scshape\Large A subheading for our titlepage\par}
+        \vspace{2cm}
+        {\Large\textbf{Main title}\par}
+        \vspace{2cm}
+        {\Large\itshape Frederik Bußmann\par}
+        \vfill
+        {\large October 21, 2021\par}
+    \end{titlepage}
+    \clearpage
+
+    % Empty page
+    \afterpage{\blankpage}
+    \clearpage
+
+    % Table of contents
+    \tableofcontents
+    \thispagestyle{empty}
+    \clearpage
+
+    % Start document content
+    \setcounter{page}{1}
+    \input{sections/introduction}
+
+    % Bibliography
+    \printbibliography[heading = bibintoc]
+
+\end{document}

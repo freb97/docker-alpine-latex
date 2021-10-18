@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  latex:
+    container_name: latex
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "22:22"     # ssh
+    volumes:
+      - "./src:/data"
+      - "./scripts:/scripts"
+      - "./build:/build"
+    command: [ "sh", "/scripts/compile.sh" ]
