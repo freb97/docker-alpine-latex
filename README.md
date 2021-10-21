@@ -47,8 +47,8 @@ image with texlive-full and biber, which can take a few
 minutes. After that, compiling the PDF should only take
 a few seconds, but that also depends on hardware.
 
-The sources folder already has a working example document
+The ```src``` folder already has a working example document
 to expand on (or delete if you want to do your own thing).
-Just make sure to either change the ```main.tex``` file in
+Just make sure to either change the ```main``` parameter in
 ```scripts/compile.sh``` to the name of your new document
 or to name the root document ```main.tex```.
